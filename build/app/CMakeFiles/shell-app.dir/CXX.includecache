@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/PID.hpp
+iostream
+-
+
+/home/viki/eclipse-workspace/Week/app/main.cpp
+iostream
+-
+PID.hpp
+-
+
