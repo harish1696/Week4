@@ -37,9 +37,12 @@ int main() {
 
     // compute the pid value
     for (int i = 0; i < 100; i++) {
-        double inc = pid.compute(setpoint, vel); // Calculate increment
-        cout << "velocity:"<<vel<<"     increment:"<< inc<< "\n"; //Print values to console
-        vel += inc; // add increment to dynamic value
+        // Calculate increment
+        double inc = pid.compute(setpoint, vel);
+
+        // Print values to console
+        cout << "velocity:" << vel << "increment:"<< inc<< "\n";
+        vel += inc;  // add increment to dynamic value
     }
     return 0;
 }

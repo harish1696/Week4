@@ -19,34 +19,32 @@ class PID {
       double kd;
       double prevError;
       double iSum;
-      double dt=.1;
+      double dt = 0.1;
 };
 
 // to compute output velocity with given setpoint and actual velocity
 double PID::compute(double setpoint, double vel) {
-      	//double output = setpoint - vel ;
+  // Calculate error
+  double error = setpoint - vel;
 
-	// Calculate error
-    	double error = setpoint - vel;
+  // Proportional term
+  double Pout = kp * error;
 
-    	// Proportional term
-    	double Pout = kp * error;
+  // Integral term
+  iSum += error * dt;
+  double Iout = ki * iSum;
 
-    	// Integral term
-    	iSum += error * dt;
-    	double Iout = ki * iSum;
+  // Derivative term
+  double derivative = (error - prevError)/dt;
+  double Dout = kd * derivative;
 
-    	// Derivative term
-    	double derivative = (error - prevError)/dt;
-    	double Dout = kd * derivative;
+  // Calculate total output
+  double output = Pout + Iout + Dout;
 
-    	// Calculate total output
-    	double output = Pout + Iout + Dout;
+  // Save error to previous error
+  prevError = error;
 
-    	// Save error to previous error
-    	prevError = error;
-
-	return output;
+  return output;
 }
 
 // to initialize previous error and integral sum values
