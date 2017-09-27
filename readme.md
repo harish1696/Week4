@@ -1,7 +1,6 @@
 # C++ Boilerplate
 [![Build Status](https://travis-ci.org/harish1696/Week4.svg?branch=master)](https://travis-ci.org/harish1696/Week4)
 [![Coverage Status](https://coveralls.io/repos/github/harish1696/Week4/badge.svg?branch=master)](https://coveralls.io/github/harish1696/Week4?branch=master)
----
 
 ## Overview
 
@@ -124,3 +123,5 @@ perspetive view (or Windows->Perspective->Open Perspective->C/C++).
 - Git
 
     It is possible to manage version control through Eclipse and the git plugin, but it typically requires creating another project. If you're interested in this, try it out yourself and contact me on Canvas.
+
+TO DO : Implement a while loop to converge the error to 0
